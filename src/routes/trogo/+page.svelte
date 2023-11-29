@@ -1,5 +1,4 @@
 <script>
-	export const prerender = true;
 	import showdown from 'showdown';
 	import { onMount } from 'svelte';
 	import { base } from '$app/paths';

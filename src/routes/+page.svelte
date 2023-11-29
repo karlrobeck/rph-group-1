@@ -1,5 +1,5 @@
 <script>
-	export const prerender = true;
+
 	import { base } from '$app/paths';
 </script>
 
