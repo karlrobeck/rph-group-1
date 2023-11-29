@@ -1,15 +1,15 @@
 <script>
+	export const prerender = true;
 	import showdown from 'showdown';
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 
 	const converter = new showdown.Converter();
 	converter.setFlavor('github');
 
 	let document;
 	onMount(async () => {
-		const res = await fetch(
-			`${process.env.NODE_ENV === 'production' ? process.env.PRODUCTION_URL : ''}/alferez.md`
-		);
+		const res = await fetch(`${base}/alferez.md`);
 		document = converter.makeHtml(await res.text());
 	});
 </script>
