@@ -2,6 +2,8 @@
 
 ---
 
+![test](https://www.dcstamps.com/wp-content/uploads/2012/10/FE-Philippines-Japanese-Occupation-Photo.jpg)
+
 World War II brought significant changes to nations globally, including the Philippines. During the Japanese occupation from 1942 to 1945, the country underwent administrative restructuring and policy implementations that affected various communities, including the Jewish residents of the Philippines.
 
 #### Restructuring of Administration and Imposed Levies:

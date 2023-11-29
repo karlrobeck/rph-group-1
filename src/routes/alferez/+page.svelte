@@ -101,7 +101,9 @@
 			<!-- End Avatar Media -->
 
 			<!-- Content -->
-			<div class="prose dark:prose-invert w-full">
+			<div
+				class="prose dark:prose-invert prose-img:rounded-md prose-img:h-60 prose-img:w-full prose-img:object-cover"
+			>
 				{#if document}
 					{@html document}
 				{/if}
