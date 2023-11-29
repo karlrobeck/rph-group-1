@@ -1,20 +1,21 @@
 <script>
 	import showdown from 'showdown';
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
 
 	const converter = new showdown.Converter();
 	converter.setFlavor('github');
 
 	let document;
 	onMount(async () => {
-		const res = await fetch(`/${$page.params.user}.md`);
+		const res = await fetch(
+			`${process.env.NODE_ENV === 'production' ? process.env.PRODUCTION_URL : ''}/barlaan.md`
+		);
 		document = converter.makeHtml(await res.text());
 	});
 </script>
 
 <svelte:head>
-	<title>{$page.params.user} Blog</title>
+	<title>Barlaan Blog</title>
 </svelte:head>
 
 <!-- Blog Article -->
@@ -43,31 +44,11 @@
 			<div class="flex justify-between items-center mb-6">
 				<div class="flex w-full sm:items-center gap-x-5 sm:gap-x-3">
 					<div class="flex-shrink-0">
-						{#if $page.params.user === 'ardonia'}
-							<img
-								class="h-12 w-12 rounded-full object-cover"
-								src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t39.30808-1/340242717_6033317763384716_670218383113599144_n.jpg?stp=dst-jpg_p200x200&_nc_cat=106&ccb=1-7&_nc_sid=5740b7&_nc_eui2=AeE7xeoyLJXSHoCVbO_GMFCgX5UiGWLoIgxflSIZYugiDMC-s3zt5gcVGn8RnpVPGq7YRqpHCmvLKPkavy5pCqeF&_nc_ohc=dbf0rXK1Hn0AX9wVm2p&_nc_ht=scontent.fmnl25-3.fna&oh=00_AfCsf6xWKEqxq5QxQ_QnSR3wCnRjXzcfg3k90xuHe7ZwrA&oe=656C56CC"
-								alt={$page.params.user}
-							/>
-						{:else if $page.params.user === 'barlaan'}
-							<img
-								class="h-12 w-12 rounded-full object-cover"
-								src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t1.6435-9/176738317_2107970502729936_3272826855005610149_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=73878a&_nc_eui2=AeFQMlws_IaA5oVJHVbEQ3tDU_9V9wubSxhT_1X3C5tLGNEUroRwNY1DKg6vIHEF8sK_1uMNlaSgLuF-yU_lHYv7&_nc_ohc=KtkpAxXNnw8AX-DW_3j&_nc_ht=scontent.fmnl25-3.fna&oh=00_AfCshjqku3YtX7OCVOHl_KLyN48kjwFG6E1VsxeEDoAj5w&oe=658E67D5"
-								alt={$page.params.user}
-							/>
-						{:else if $page.params.user === 'trogo'}
-							<img
-								class="h-12 w-12 rounded-full object-cover"
-								src="https://scontent.fmnl25-1.fna.fbcdn.net/v/t1.6435-9/62253520_2936519453041741_8277062214649643008_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=7a1959&_nc_eui2=AeH_PYSvxH0gEm-itJtz7cFztZ58i7RIblW1nnyLtEhuVcpTF0hLeXA_MTmfwBSXkH3yIqwnQmt2ddQYVwrfJTeU&_nc_ohc=IMSt3BbjJ-EAX8XWRDR&_nc_ht=scontent.fmnl25-1.fna&oh=00_AfACFkbJZaAPvxexhakLs6JSK0iJWy61Q0rB3QcEQ7wBIA&oe=658E7A0A"
-								alt={$page.params.user}
-							/>
-						{:else if $page.params.user === 'alferez'}
-							<img
-								class="h-12 w-12 rounded-full"
-								src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/316550295_1007028853591272_3425713151920287560_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9c7eae&_nc_eui2=AeFPo5FUOmQUZJJLFBVDK21F0ixDpE5kRbDSLEOkTmRFsOu0RN08ThrTQlv95Xz1x-Z2tiVQB9cLO5SNRehpzWPD&_nc_ohc=MbaS36yGZewAX9m6cGa&_nc_ht=scontent.fmnl25-4.fna&oh=00_AfC35OWIyRt9ROrHMycOfJ001E_DXSRgRwmnSgQttglFzg&oe=656B5906"
-								alt={$page.params.user}
-							/>
-						{/if}
+						<img
+							class="h-12 w-12 rounded-full object-cover"
+							src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t1.6435-9/176738317_2107970502729936_3272826855005610149_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=73878a&_nc_eui2=AeFQMlws_IaA5oVJHVbEQ3tDU_9V9wubSxhT_1X3C5tLGNEUroRwNY1DKg6vIHEF8sK_1uMNlaSgLuF-yU_lHYv7&_nc_ohc=KtkpAxXNnw8AX-DW_3j&_nc_ht=scontent.fmnl25-3.fna&oh=00_AfCshjqku3YtX7OCVOHl_KLyN48kjwFG6E1VsxeEDoAj5w&oe=658E67D5"
+							alt="Andrei Barlaan"
+						/>
 					</div>
 					<div class="grow">
 						<div class="flex justify-between items-center gap-x-2">
@@ -76,15 +57,7 @@
 								<div class="hs-tooltip inline-block [--trigger:hover] [--placement:bottom]">
 									<div class="hs-tooltip-toggle sm:mb-1 block text-start cursor-pointer">
 										<span class="font-semibold text-gray-800 dark:text-gray-200">
-											{#if $page.params.user === 'ardonia'}
-												Ralph Ardonia
-											{:else if $page.params.user === 'barlaan'}
-												Andrei Barlaan
-											{:else if $page.params.user === 'trogo'}
-												Clark Trogo
-											{:else if $page.params.user === 'alferez'}
-												Karl Robeck Alferez
-											{/if}
+											Andrei Barlaan
 										</span>
 									</div>
 								</div>
@@ -101,7 +74,7 @@
 							<!-- Button Group -->
 							<div>
 								<a
-									href="https://www.facebook.com/ralphlauren.ardona"
+									href="https://www.facebook.com/andrei.barlaan.5"
 									target="_blank"
 									type="button"
 									class="py-1.5 px-2.5 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"

@@ -1,4 +1,3 @@
-<!-- Hero -->
 <div class="bg-slate-900 h-full">
 	<div class="bg-gradient-to-b from-violet-600/[.15] via-transparent">
 		<div
@@ -25,7 +24,7 @@
 					<!-- Card -->
 					<a
 						class="group rounded-xl overflow-hidden focus:outline-none focus:ring-1 focus:ring-gray-600"
-						href="/barlaan"
+						href="{process.env.NODE_ENV === 'production' ? process.env.PRODUCTION_URL : ''}/barlaan"
 					>
 						<div class="sm:flex">
 							<div class="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
@@ -66,7 +65,7 @@
 					<!-- Card -->
 					<a
 						class="group rounded-xl overflow-hidden focus:outline-none focus:ring-1 focus:ring-gray-600"
-						href="/ardonia"
+						href="{process.env.NODE_ENV === 'production' ? process.env.PRODUCTION_URL : ''}/ardonia"
 					>
 						<div class="sm:flex">
 							<div class="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
@@ -107,7 +106,7 @@
 					<!-- Card -->
 					<a
 						class="group rounded-xl overflow-hidden focus:outline-none focus:ring-1 focus:ring-gray-600"
-						href="/alferez"
+						href="{process.env.NODE_ENV === 'production' ? process.env.PRODUCTION_URL : ''}/alferez"
 					>
 						<div class="sm:flex">
 							<div class="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
@@ -148,7 +147,7 @@
 					<!-- Card -->
 					<a
 						class="group rounded-xl overflow-hidden focus:outline-none focus:ring-1 focus:ring-gray-600"
-						href="/trogo"
+						href="{process.env.NODE_ENV === 'production' ? process.env.PRODUCTION_URL : ''}/trogo"
 					>
 						<div class="sm:flex">
 							<div class="flex-shrink-0 relative rounded-xl overflow-hidden w-full sm:w-56 h-44">
