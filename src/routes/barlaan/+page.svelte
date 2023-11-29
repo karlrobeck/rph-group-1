@@ -45,7 +45,7 @@
 						<div class="flex-shrink-0">
 							<img
 								class="h-12 w-12 rounded-full object-cover"
-								src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t1.6435-9/176738317_2107970502729936_3272826855005610149_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=73878a&_nc_eui2=AeFQMlws_IaA5oVJHVbEQ3tDU_9V9wubSxhT_1X3C5tLGNEUroRwNY1DKg6vIHEF8sK_1uMNlaSgLuF-yU_lHYv7&_nc_ohc=KtkpAxXNnw8AX-DW_3j&_nc_ht=scontent.fmnl25-3.fna&oh=00_AfCshjqku3YtX7OCVOHl_KLyN48kjwFG6E1VsxeEDoAj5w&oe=658E67D5"
+								src="{base}/andrei.jpg"
 								alt="Andrei Barlaan"
 							/>
 						</div>
