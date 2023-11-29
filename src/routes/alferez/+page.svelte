@@ -23,7 +23,7 @@
 		<div class="max-w-2xl">
 			<a
 				class="pb-4 inline-flex items-center gap-x-1.5 text-sm text-gray-600 decoration-2 hover:underline dark:text-blue-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-				href="/"
+				href={base}
 			>
 				<svg
 					class="flex-shrink-0 w-4 h-4"
